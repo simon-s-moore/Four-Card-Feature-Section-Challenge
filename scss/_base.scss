@@ -1,0 +1,68 @@
+// COLOURS PRIMARY
+$color-red: hsl(0, 78%, 62%);
+$color-cyan: hsl(180, 62%, 55%);
+$color-orange: hsl(34, 97%, 64%);
+$color-blue: hsl(212, 86%, 64%);
+
+// COLOURS NEUTRAL
+$color-dark-blue: hsl(234, 12%, 34%);
+$color-grey-blue: hsl(229, 6%, 66%);
+$color-light-grey: hsl(0, 0%, 98%);
+
+// BREAK POINTS
+
+$bp-largest: 75em;      // 1200px 
+$bp-large: 46.875em;    // 750px 
+$bp-medium: 40.625em;   // 650px 
+$bp-small: 31.25em;     // 500px 
+
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; //16px
+
+    @media only screen and (max-width: $bp-large) {
+        font-size: 55%;
+    }
+}
+
+body {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+
+    background-color: $color-light-grey;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: $color-grey-blue;
+    line-height: 1.7;
+    min-height: 100vh;
+
+}
+
+.container {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    grid-template: repeat(2, minmax(max-content, 25rem)) / repeat(3, minmax(min-content, 35rem));
+    grid-row-gap: 3rem;
+    grid-column-gap: 3rem;
+    margin: 6rem 3rem;
+
+    @media only screen and (max-width: $bp-largest) {
+        grid-template: repeat(2, minmax(max-content, 25rem)) / repeat(2, minmax(min-content, 35rem));
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        grid-template: repeat(2, minmax(max-content, 25rem)) / minmax(min-content, 35rem);
+    }
+}
